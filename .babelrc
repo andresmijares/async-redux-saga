@@ -13,6 +13,7 @@
     },
     "production": {
       "plugins": [
+        "transform-runtime",
         "transform-react-constant-elements",
         "transform-react-remove-prop-types"
       ]
