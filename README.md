@@ -1,4 +1,4 @@
-# Distributed Async calls with redux sagas
+# Distributed Async calls with redux sagas [![Build Status](https://travis-ci.org/andresmijares/async-redux-saga.svg?branch=master)](https://travis-ci.org/andresmijares/async-redux-saga)
 
 A similar approach to [Flattering Promise Chains](http://solutionoptimist.com/2013/12/27/javascript-promise-chains-2/) using redux sagas.
 
