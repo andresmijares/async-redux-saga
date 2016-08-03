@@ -4,5 +4,5 @@ node_js:
   - "5"
   - "4"
 after_success:
-  # Send coverage data to coveralls.
+  # Send coverage data to coveralls. /
   - npm run test:cover:travis
