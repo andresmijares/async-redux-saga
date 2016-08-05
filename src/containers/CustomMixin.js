@@ -6,8 +6,8 @@ let Mixin = InnerComponent => class extends React.Component {
   static propTypes() {
     return {
       loadDashboard : PropTypes.loadDashboard.func.isRequired,
-      user : PropTypes.user.object.isRequired,
-      dashboard3: PropTypes.object.isRequired
+      user : PropTypes.object.isRequired,
+      title: PropTypes.string.isRequired
     };
   }
 

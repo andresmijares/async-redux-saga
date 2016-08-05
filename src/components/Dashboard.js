@@ -1,23 +1,24 @@
 import React, {PropTypes} from 'react';
 
-const Dashboard = ({title, user, data}) => {
-  const {departure, flight, forecast} = data;
+const Dashboard = ({title, user, data = {}}) => {
 
-  const displayUserName = () => {
-      return (!!user) ? user.email : null;
-  };
+    const {departure, flight, forecast} = data;
 
-  const displayFlight = () => {
-    return (!!flight) ? flight.plane.make : null;
-  };
+    const displayUserName = () => {
+        return (!!user) ? user.email : null;
+    };
 
-  const displayDeparture = () => {
-    return !!departure ? departure.date : null;
-  };
+    const displayFlight = () => {
+      return (!!flight) ? flight.plane.make : null;
+    };
 
-  const displayForecast = () => {
-    return !!forecast ? forecast.forecast : null;
-  };
+    const displayDeparture = () => {
+      return (!!departure) ? departure.date : null;
+    };
+
+    const displayForecast = () => {
+      return (!!forecast) ? forecast.forecast : null;
+    };
 
    return (<div className="o-dashboard panel panel-default">
       <div className="panel-heading"><h4>{title}</h4></div>
@@ -43,7 +44,7 @@ const Dashboard = ({title, user, data}) => {
 Dashboard.propTypes = {
   user : PropTypes.object,
   data : PropTypes.object,
-  title : PropTypes.string.required
+  title : PropTypes.string
 };
 
 export default Dashboard;

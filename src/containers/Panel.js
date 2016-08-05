@@ -7,7 +7,7 @@ import Mixin from './CustomMixin';
 const Panel = (props) => {
   return(
         <div className="col-md-4">
-          <Dashboard title="Panel Sequenced" user={props.user} data={props.dashboard3} />
+          <Dashboard title="Panel Sequenced" user={props.user} data={props.dashboard} />
         </div>
     );
 };
@@ -16,7 +16,7 @@ let PanelMixed = Mixin(Panel);
 
 const mapStateToProps =(state) => ({
     user : state.user,
-    dashboard3 : state.dashboard
+    dashboard : state.dashboard
 });
 
 function mapDispatchToProps(dispatch) {
