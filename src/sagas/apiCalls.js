@@ -7,7 +7,7 @@ export const loadUser = () => {
 };
 
 export const loadDeparture = (user) => {
-  console.log('loading departure');
+  console.log('loading departure', user);
   return TravelServiceApi.getDeparture(user).then(res => res);
 };
 

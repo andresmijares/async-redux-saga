@@ -1,6 +1,8 @@
 import { call, put, select , take} from 'redux-saga/effects';
 import {loadDeparture, loadFlight, loadForecast } from './apiCalls';
 
+export const getUserFromState = (state) => state.user;
+
 export function* loadDashboardSequenced() {
 
   try {
@@ -8,8 +10,7 @@ export function* loadDashboardSequenced() {
       yield take('FETCH_USER_SUCCESS');
 
       //Take the user info from the store
-      const user = yield select(state => state.user);
-
+      const user = yield select(getUserFromState);
       //Get Departure information
       const departure = yield call(loadDeparture, user);
 
@@ -24,7 +25,7 @@ export function* loadDashboardSequenced() {
 
 
   } catch(error) {
-    yield put({type: 'FETCH_FAILED', error});
+    yield put({type: 'FETCH_FAILED', error: error.message});
   }
 
 }

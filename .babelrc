@@ -5,6 +5,9 @@
     "stage-1"
   ],
   "env": {
+      "test" : {
+        "plugins": ["transform-runtime"]
+      },
     "development": {
       "plugins": ["transform-runtime"],
       "presets": [

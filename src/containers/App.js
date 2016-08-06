@@ -9,6 +9,7 @@ class App extends React.Component {
               {this.props.panel}
               {this.props.panel2}
               {this.props.panel3}
+              <a href="https://github.com/andresmijares/async-redux-saga" target="_new">Check the repo here</a>
             </div>
           </div>
         </div>

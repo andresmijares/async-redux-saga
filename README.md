@@ -4,6 +4,4 @@ A similar approach to [Flattering Promise Chains](http://solutionoptimist.com/20
 
 Check the final demo [here](http://async-redux-saga.surge.sh/).
 
-
-#Pendings
-- test
+Check the article [here](http://medium.com/...)

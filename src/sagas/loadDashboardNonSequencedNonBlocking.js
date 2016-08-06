@@ -1,17 +1,18 @@
 import { call, put, select , take} from 'redux-saga/effects';
 import {loadDeparture, loadFlight, loadForecast } from './apiCalls';
 
+export const getUserFromState = (state) => state.user;
+
 export function* loadDashboardNonSequencedNonBlocking() {
   try {
     //Wait for the user to be loaded
     yield take('FETCH_USER_SUCCESS');
 
     //Take the user info from the store
-    const user = yield select(state => state.user);
+    const user = yield select(getUserFromState);
 
     //Get Departure information
     const departure = yield call(loadDeparture, user);
-    yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: {departure,}});
 
     //trigger actions for Forecast and Flight to start...
     //We can pass and object into the put statement
@@ -19,7 +20,7 @@ export function* loadDashboardNonSequencedNonBlocking() {
 
 
   } catch(error) {
-    yield put({type: 'FETCH_FAILED', error});
+    yield put({type: 'FETCH_FAILED', error: error.message});
   }
 }
 
@@ -34,7 +35,7 @@ export function* isolatedFlight() {
     yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: {flight}});
 
   } catch (error) {
-    yield put({type: 'FETCH_FAILED', error});
+    yield put({type: 'FETCH_FAILED', error: error.message});
   }
 }
 
@@ -47,6 +48,6 @@ export function* isolatedForecast() {
       yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: { forecast, }});
 
     } catch(error) {
-      yield put({type: 'FETCH_FAILED', error});
+      yield put({type: 'FETCH_FAILED', error: error.message});
     }
 }
