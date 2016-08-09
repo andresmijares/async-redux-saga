@@ -5,7 +5,7 @@ import {loadDeparture, loadFlight, loadForecast } from './apiCalls';
 import {flight, departure, forecast, user} from './testHelpers';
 
 
-describe('NonSecuencedNonBlocking Saga', () => {
+describe('NonSequencedNonBlocking Saga', () => {
     let output = null;
     const saga = loadDashboardNonSequencedNonBlocking();
 

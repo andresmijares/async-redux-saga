@@ -5,15 +5,14 @@ import {loadDeparture, loadFlight, loadForecast } from './apiCalls';
 import {flight, departure, forecast, user} from './testHelpers';
 
 
-describe('Secuenced Saga', () => {
+describe('Sequenced Saga', () => {
   const saga = loadDashboardSequenced();
- let output = null;
+  let output = null;
 
   it('should take fetch users success', () => {
       output = saga.next().value;
       let expected = take('FETCH_USER_SUCCESS');
       expect(output).toEqual(expected);
-
   });
 
   it('should select the state from store', () => {
@@ -52,5 +51,4 @@ describe('Secuenced Saga', () => {
        expect(finished).toEqual(true);
        expect(output).toEqual(expected);
     });
-
 });

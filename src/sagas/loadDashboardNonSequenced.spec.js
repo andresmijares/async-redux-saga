@@ -4,7 +4,7 @@ import { call, put, select , take} from 'redux-saga/effects';
 import {loadDeparture, loadFlight, loadForecast } from './apiCalls';
 import {flight, departure, forecast, user} from './testHelpers';
 
-describe('NonSecuenced Saga', () => {
+describe('NonSequenced Saga', () => {
   const saga = loadDashboardNonSequenced();
   let output = null;
 

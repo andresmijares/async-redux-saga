@@ -4,4 +4,4 @@ A similar approach to [Flattering Promise Chains](http://solutionoptimist.com/20
 
 Check the final demo [here](http://async-redux-saga.surge.sh/).
 
-Check the article [here](http://medium.com/...)
+Check the article [here](https://medium.com/@andresmijares25/async-operations-using-redux-saga-2ba02ae077b3#.sxsygk28s)

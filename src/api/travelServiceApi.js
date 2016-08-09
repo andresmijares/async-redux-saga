@@ -1,4 +1,3 @@
-
 class TravelServiceApi {
 
  static getUser() {
