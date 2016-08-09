@@ -3,7 +3,7 @@ import React, {PropTypes} from 'react';
 const Dashboard = ({title, user, data = {}}) => {
 
     const {departure, flight, forecast} = data;
-
+    
     const displayUserName = () => {
         return (!!user) ? user.email : null;
     };

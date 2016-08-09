@@ -30,6 +30,12 @@ describe('NonSequencedNonBlocking Saga', () => {
 
     it('should put FETCH_DEPARTURE3_SUCCESS', ()=> {
       output = saga.next(departure).value;
+      let expected = put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: {departure}});
+      expect(output).toEqual(expected);
+    });
+
+    it('should put FETCH_DEPARTURE3_SUCCESS', ()=> {
+      output = saga.next(departure).value;
       let expected = put({type: 'FETCH_DEPARTURE3_SUCCESS', departure});
       expect(output).toEqual(expected);
     });

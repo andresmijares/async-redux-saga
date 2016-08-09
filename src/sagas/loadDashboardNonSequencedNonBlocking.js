@@ -14,10 +14,12 @@ export function* loadDashboardNonSequencedNonBlocking() {
     //Get Departure information
     const departure = yield call(loadDeparture, user);
 
+    //Update the UI
+    yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: {departure}});
+
     //trigger actions for Forecast and Flight to start...
     //We can pass and object into the put statement
     yield put({type: 'FETCH_DEPARTURE3_SUCCESS', departure});
-
 
   } catch(error) {
     yield put({type: 'FETCH_FAILED', error: error.message});
@@ -45,7 +47,7 @@ export function* isolatedForecast() {
       const departure = yield take('FETCH_DEPARTURE3_SUCCESS');
 
       const forecast = yield call(loadForecast, departure.date);
-      yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: { forecast, }});
+      yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: { forecast }});
 
     } catch(error) {
       yield put({type: 'FETCH_FAILED', error: error.message});
