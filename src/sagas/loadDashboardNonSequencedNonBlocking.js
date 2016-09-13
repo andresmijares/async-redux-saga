@@ -31,7 +31,7 @@ export function* isolatedFlight() {
     /* departure will take the value of the object passed by the put*/
     const departure = yield take('FETCH_DEPARTURE3_SUCCESS');
 
-    //Flight can be called unsecuenced /* BUT NON BLOCKING VS FORECAST*/
+    //Flight can be called unsequenced /* BUT NON BLOCKING VS FORECAST*/
     const flight = yield call(loadFlight, departure.flightID);
     //Tell the store we are ready to be displayed
     yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: {flight}});

@@ -14,7 +14,7 @@ export function* loadDashboardNonSequenced() {
     //Get Departure information
     const departure = yield call(loadDeparture, user);
 
-    //Flight and Forecast can be called unsecuenced /* BUT BLOCKING */
+    //Flight and Forecast can be called non-sequenced /* BUT BLOCKING */
     const [flight, forecast] = yield [call(loadFlight, departure.flightID), call(loadForecast, departure.date)];
 
     //Tell the store we are ready to be displayed
