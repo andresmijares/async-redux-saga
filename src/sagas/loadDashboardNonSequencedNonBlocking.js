@@ -29,7 +29,7 @@ export function* loadDashboardNonSequencedNonBlocking() {
 export function* isolatedFlight() {
   try {
     /* departure will take the value of the object passed by the put*/
-    const departure = yield take('FETCH_DEPARTURE3_SUCCESS');
+    const {departure} = yield take('FETCH_DEPARTURE3_SUCCESS');
 
     //Flight can be called unsequenced /* BUT NON BLOCKING VS FORECAST*/
     const flight = yield call(loadFlight, departure.flightID);
@@ -44,7 +44,7 @@ export function* isolatedFlight() {
 export function* isolatedForecast() {
     try {
       /* departure will take the value of the object passed by the put*/
-      const departure = yield take('FETCH_DEPARTURE3_SUCCESS');
+      const {departure} = yield take('FETCH_DEPARTURE3_SUCCESS');
 
       const forecast = yield call(loadForecast, departure.date);
       yield put({type: 'FETCH_DASHBOARD3_SUCCESS', payload: { forecast }});
