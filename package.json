@@ -74,7 +74,7 @@
     "mocha": "2.5.3",
     "node-sass": "3.8.0",
     "npm-run-all": "2.3.0",
-    "open": "0.0.5",
+    "open": "7.1.0",
     "postcss-loader": "0.9.1",
     "prompt": "1.0.0",
     "react-addons-test-utils": "15.2.1",
